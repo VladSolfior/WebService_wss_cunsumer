@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:th="http://www.thymeleaf.org"
+>
+<html lang="en">
+<head>
+    <link rel="stylesheet" type="text/css" media="all" th:href="@{/css/bootstrap.css}"
+          href="../static/css/bootstrap.css" />
+</head>
+<body>
+	<div class="container">
+	    <div class="jumbotron">
+	        <h2>You are In!!!</h2>
+
+			<form class="" th:action="@{/logout}" method="post">
+				<!--<input class="btn bt-sm btn-primary btn-block" type="submit" value="Sign Out"/>-->
+
+                <div class="row">
+                    <div class="col-xs-6 col-sm-6 col-md-6">
+                        <input class="btn bt-sm btn-primary btn-block" type="submit" value="Sign Out"/>
+                    </div>
+                    <div class="col-xs-6 col-sm-6 col-md-6">
+                    </div>
+                </div>
+			</form>
+	    </div>
+	</div>
+</body>
+</html>
