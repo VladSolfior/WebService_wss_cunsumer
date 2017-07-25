@@ -4,6 +4,6 @@ to manage users finances.
 
 Developed on following technologies:
 Spring Boot, Spring WEB MVC,
-Spring Security, Spring DATA JPA,
+add Spring Security, Basic Authentication Spring DATA JPA,
 Hibernate, MySQL, SLF4J Logging, 
 
