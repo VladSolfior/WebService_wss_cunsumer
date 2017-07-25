@@ -31,8 +31,8 @@ public interface CrudUserRepository extends JpaRepository<User, Long> {
 
     User getByEmail(String email);
 
-//    @Query("SELECT u FROM User u LEFT JOIN FETCH u.meals WHERE u.id = ?1")
-//    @EntityGraph(value = User.GRAPH_WITH_MEALS)
+//    @Query("SELECT u FROM User u LEFT JOIN FETCH u.buys WHERE u.id = ?1")
+//    @EntityGraph(value = User.GRAPH_WITH_BUYS)
 
     @EntityGraph(attributePaths={"buys", "roles"})
     @Query("SELECT u FROM User u WHERE u.id=?1")

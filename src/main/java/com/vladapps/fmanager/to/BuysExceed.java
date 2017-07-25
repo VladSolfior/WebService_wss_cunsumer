@@ -1,4 +1,4 @@
-package com.vladapps.fmanager.model;
+package com.vladapps.fmanager.to;
 
 import java.time.LocalDateTime;
 
@@ -7,11 +7,11 @@ public class BuysExceed {
 
     private final String description;
 
-    private final int total;
+    private final long total;
 
     private final boolean exceed;
 
-    public BuysExceed(LocalDateTime dateTime, String description, int total, boolean exceed) {
+    public BuysExceed(LocalDateTime dateTime, String description, long total, boolean exceed) {
         this.dateTime = dateTime;
         this.description = description;
         this.total = total;

@@ -1,7 +1,7 @@
 package com.vladapps.fmanager.util;
 
 import com.vladapps.fmanager.model.Buy;
-import com.vladapps.fmanager.model.BuysExceed;
+import com.vladapps.fmanager.to.BuysExceed;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;

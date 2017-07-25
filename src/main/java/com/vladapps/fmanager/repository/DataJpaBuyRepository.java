@@ -36,21 +36,22 @@ public class DataJpaBuyRepository implements BuyRepository {
 
     @Override
     public Buy get(long id, long userId) {
-        return null;
+        Buy buy = crudBuyRepository.findOne(id);
+        return buy != null && buy.getUser().getId() == userId ? buy : null;
     }
 
     @Override
     public List<Buy> getAll(long userId) {
-        return null;
+        return crudBuyRepository.getAll(userId);
     }
 
     @Override
     public List<Buy> getBetween(LocalDateTime startDate, LocalDateTime endDate, long userId) {
-        return null;
+        return crudBuyRepository.getBetween(startDate, endDate, userId);
     }
 
     @Override
     public Buy getWithUser(long id, long userId) {
-        return null;
+        return crudBuyRepository.getWithUser(id, userId);
     }
 }
