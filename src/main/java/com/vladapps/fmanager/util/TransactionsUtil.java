@@ -13,7 +13,7 @@ import java.util.stream.Collectors;
 public class TransactionsUtil {
 
 
-    public static final int DEFAULT_SPEND_PER_DAY = 500;
+    public static final long DEFAULT_SPEND_PER_DAY = 500L;
 
 
     public static void main(String[] args) {
@@ -30,7 +30,11 @@ public class TransactionsUtil {
         buysExceeds.forEach(System.out::println);
     }
 
-    public static List<BuysExceed> getFilteredWithExceeded(List<Buy> buys, LocalTime startTime, LocalTime endTime, int budgetedToDay) {
+    public static List<BuysExceed> getWithExceeded(Collection<Buy> buys, long budgetedToDay) {
+        return getFilteredWithExceeded(buys, LocalTime.MIN, LocalTime.MAX, budgetedToDay);
+    }
+
+    public static List<BuysExceed> getFilteredWithExceeded(Collection<Buy> buys, LocalTime startTime, LocalTime endTime, long budgetedToDay) {
         Map<LocalDate, Integer> totalsSumByDate = buys.stream()
                 .collect(
                         Collectors.groupingBy(Buy::getDate, Collectors.summingInt(Buy::getTotal))

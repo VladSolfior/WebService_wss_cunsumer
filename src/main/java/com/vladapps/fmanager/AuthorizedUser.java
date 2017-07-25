@@ -8,7 +8,7 @@ import static com.vladapps.fmanager.util.TransactionsUtil.DEFAULT_SPEND_PER_DAY;
 public class AuthorizedUser {
     public static long id = BaseEntity.START_SEQ;
 
-    public static long id() {
+    public static long getId() {
         return id;
     }
 
@@ -16,7 +16,7 @@ public class AuthorizedUser {
         AuthorizedUser.id = id;
     }
 
-    public static int getSpendPerDay() {
+    public static long getSpendPerDay() {
         return DEFAULT_SPEND_PER_DAY;
     }
 }
