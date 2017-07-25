@@ -42,7 +42,7 @@ public class User extends NamedEntity {
 
     @Column(name = "spend_per_day", columnDefinition = "int default 500")
     @Range(min = 10, max = 10000)
-    private int spendPerDay = DEFAULT_SPEND_PER_DAY;
+    private long spendPerDay = DEFAULT_SPEND_PER_DAY;
 
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "user")//, cascade = CascadeType.REMOVE, orphanRemoval = true)
     @OrderBy("dateTime DESC")
@@ -120,11 +120,11 @@ public class User extends NamedEntity {
         this.roles = roles;
     }
 
-    public int getSpendPerDay() {
+    public long getSpendPerDay() {
         return spendPerDay;
     }
 
-    public void setSpendPerDay(int spendPerDay) {
+    public void setSpendPerDay(long spendPerDay) {
         this.spendPerDay = spendPerDay;
     }
 
