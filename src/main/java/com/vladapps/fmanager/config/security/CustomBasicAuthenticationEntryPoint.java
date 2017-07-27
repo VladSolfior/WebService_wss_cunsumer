@@ -1,4 +1,4 @@
-package com.vladapps.fmanager.config;
+package com.vladapps.fmanager.config.security;
 
 
 import org.springframework.context.annotation.Profile;
