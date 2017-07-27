@@ -1,8 +1,7 @@
-package com.vladapps.fmanager.web;
+package com.vladapps.fmanager.web.user;
 
 import com.vladapps.fmanager.model.User;
 import com.vladapps.fmanager.service.UserService;
-import com.vladapps.fmanager.web.user.AbstractUserController;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.MediaType;

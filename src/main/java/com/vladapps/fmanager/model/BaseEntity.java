@@ -9,7 +9,7 @@ import javax.persistence.*;
 @Access(AccessType.FIELD)
 public class BaseEntity implements Persistable<Long> {
 
-    public static final int START_SEQ = 100000;
+    public static final long START_SEQ = 100000;
 
     @Id
     @Access(value = AccessType.PROPERTY)
