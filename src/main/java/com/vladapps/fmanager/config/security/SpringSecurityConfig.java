@@ -33,7 +33,13 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
     public void configure(WebSecurity web) throws Exception {
         web
                 .ignoring()
-                .antMatchers("/**","/css/**", "/images/**");
+                .antMatchers("/**","/css/**", "/images/**")
+                .antMatchers("/h2console/**")
+                .antMatchers("/api/register")
+                .antMatchers("/api/activate")
+                .antMatchers("/api/lostpassword")
+                .antMatchers("/api/resetpassword")
+                .antMatchers("/api/hello");
     }
 
     @Override
