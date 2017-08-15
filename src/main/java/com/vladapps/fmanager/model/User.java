@@ -2,6 +2,7 @@ package com.vladapps.fmanager.model;
 
 
 import org.hibernate.annotations.BatchSize;
+import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.NotBlank;
 import org.hibernate.validator.constraints.Range;
@@ -18,6 +19,7 @@ import static com.vladapps.fmanager.util.TransactionsUtil.DEFAULT_SPEND_PER_DAY;
 public class User extends NamedEntity {
 
     @Column(name = "email", nullable = false, unique = true)
+    @Email(message = "*Please provide a valid Email")
     private String email;
 
     @Column(name = "password", nullable = false)
@@ -32,12 +34,8 @@ public class User extends NamedEntity {
     @Column(name = "registered", columnDefinition = "timestamp default now()")
     private Date registered = new Date();
 
-    @Enumerated(EnumType.STRING)
-    @CollectionTable(name = "user_roles", joinColumns = @JoinColumn(name = "user_id"))
-    @Column(name = "role")
-    @ElementCollection(fetch = FetchType.EAGER)
-//    @Fetch(FetchMode.SUBSELECT)
-    @BatchSize(size = 200)
+    @ManyToMany(cascade = CascadeType.ALL)
+    @JoinTable(name = "user_role", joinColumns = @JoinColumn(name = "user_id"), inverseJoinColumns = @JoinColumn(name = "role_id"))
     private Set<Role> roles;
 
     @Column(name = "spend_per_day", columnDefinition = "int default 500")

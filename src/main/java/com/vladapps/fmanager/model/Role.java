@@ -1,6 +1,22 @@
 package com.vladapps.fmanager.model;
 
-public enum Role {
-    ROLE_USER,
-    ROLE_ADMIN
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "roles")
+public class Role extends BaseEntity {
+
+    @Column(name="role")
+    private String role;
+
+    public String getRole() {
+        return role;
+    }
+
+    public void setRole(String role) {
+        this.role = role;
+    }
+
 }
